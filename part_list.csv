@@ -1,0 +1,17 @@
+Partlist
+
+Exported from PhotoSensor.sch at 3/22/16 11:37 PM
+
+EAGLE Version 7.5.0 Copyright (c) 1988-2015 CadSoft
+
+Assembly variant: 
+
+Part     Value          Device                   Package    Library             Sheet
+
+2N3904                  TRANSISTOR_NPNTO-92-AMMO TO-92-AMMO barbary_enterprises 1
+IR1      TSAL6100       LED5MM                   LED5MM     Optics              1
+IR2      TSAL6100       LED5MM                   LED5MM     Optics              1
+JP1                     M04PTH                   1X04       barbary_enterprises 1
+Q1       PT334-6B       PHOTOTRANSISTOR5MM       LED5MM     Optics              1
+R1       ?              RESISTORAXIAL-0.3        AXIAL-0.3  barbary_enterprises 1
+R2       33             RESISTORAXIAL-0.3        AXIAL-0.3  barbary_enterprises 1
