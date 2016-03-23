@@ -3,7 +3,8 @@
 /Reference
 *.?#?
 *.pdf
-*.zip
+*.PDF
+*.jpg
 .*.swp
 .*.lck
 
