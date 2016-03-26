@@ -38,13 +38,17 @@ GERBV_OPTIONS= --export=png --dpi=$(GERBER_IMAGE_RESOLUTION) --background=$(BACK
 .SECONDARY:
 
 boards := $(wildcard *.brd)
-zips := $(patsubst %.brd,%.zip,$(boards))
+zips := $(patsubst %.brd,%_gerber.zip,$(boards))
 pngs := $(patsubst %.brd,%.png,$(boards))
 back_pngs := $(patsubst %.brd,%_back.png,$(boards))
+mds := $(patsubst %.brd,%.md,$(boards))
 
 GERBER_DIR=gerbers
 
-all: $(zips) $(pngs) $(back_pngs)
+all: $(zips) $(pngs) $(back_pngs) README.md
+
+README.md: Intro.md $(mds)
+	cat $+ > README.md 
 
 %.GTL: %.brd
 	eagle -X -d GERBER_RS274X -o $@ $< Top Pads Vias Dimension
@@ -77,7 +81,7 @@ all: $(zips) $(pngs) $(back_pngs)
 %.TXT: %.brd
 	eagle -X -d EXCELLON_24 -o $@ $< Drills Holes
 
-%.zip: %.GTL %.GBL %.GTO %.GTP %.GBO %.GTS %.GBS %.GML %.TXT %.png %_back.png
+%_gerber.zip: %.GTL %.GBL %.GTO %.GTP %.GBO %.GTS %.GBS %.GML %.TXT %.png %_back.png
 	zip $@ $^ $*.dri
 
 %.png: %.TXT %.GTO %.GTS %.GTL
@@ -99,9 +103,21 @@ all: $(zips) $(pngs) $(back_pngs)
 clean:
 	rm -f *.zip *.GTL *.GBL *.GTO *.GTP *.GBO *.GTS *.GBS *.GML *.TXT *.gpi *.png *.dri
 
-README.md: 
-	echo "$(PROJECT_NAME) \n\n ![](https://github.com/$(GITHUB_USER)/$(PROJECT_NAME)/raw/master/$(PROJECT_NAME)-pcb.png)" >> \
-	README.md
+%.md: %.png %_back.png %.GTL
+	echo "## $* \n\n" >  $@
+	gerber_board_size $*.GTL >> $@
+	echo "\n\n| Front | Back |\n| --- | --- |\n| ![Front]($*.png) | ![Back]($*_back.png) |\n\n" >>  $@
+
+.gitignore:
+	echo "\n*~\n.*.swp\n*.?#?\n.*.lck" > .gitignore
+
+.git:
+	echo "\n*~\n.*.swp\n*.?#?\n.*.lck" > .gitignore
+	git init
+	git add .
+	git commit -m 'First Commit'
+
+
 
 # # TO DO: Can we get Eagle to automatically export the schematic, as a PDF or PostScript or PNG, at the command line?
 # eagle -C "print file .pdf; quit;" Pixie85.sch

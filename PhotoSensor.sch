@@ -1936,6 +1936,11 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <sheets>
 <sheet>
 <plain>
+<text x="35.56" y="48.26" size="1.778" layer="94">User Hackable
+userhackable.com
+
+PhotoSensor
+</text>
 </plain>
 <instances>
 <instance part="Q1" gate="G$1" x="88.9" y="27.94"/>
@@ -2051,4 +2056,10 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
