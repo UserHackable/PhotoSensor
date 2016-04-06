@@ -3,10 +3,10 @@
 /Reference
 *.?#?
 *.pdf
-*.PDF
-*.jpg
 .*.swp
 .*.lck
+*.jpg
+*.PDF
 
 *.GBL
 *.GBO
