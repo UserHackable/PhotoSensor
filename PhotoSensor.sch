@@ -483,8 +483,8 @@
 </device>
 <device name="5MM" package="LED5MM">
 <connects>
-<connect gate="G$1" pin="C" pad="A"/>
-<connect gate="G$1" pin="E" pad="K"/>
+<connect gate="G$1" pin="C" pad="K"/>
+<connect gate="G$1" pin="E" pad="A"/>
 </connects>
 <technologies>
 <technology name=""/>

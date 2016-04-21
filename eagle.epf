@@ -19,7 +19,7 @@ UsedLibrary="/opt/eagle-7.5.0/lbr/UserHackable/AtmelAvr.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="182 24 1141 1023"
+Loc="166 24 1125 1051"
 State=1
 Number=0
 

@@ -15,13 +15,13 @@
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="14" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="14" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -170,6 +170,12 @@ Sensor</text>
 userhackable.com</text>
 <text x="25.4" y="11.43" size="0.8128" layer="22" rot="MR0" align="center">Cache Makers
 cachemakers.org</text>
+<text x="20.32" y="15.5575" size="1.27" layer="21" align="center">-</text>
+<text x="18.0975" y="12.3825" size="1.27" layer="21" align="center">+</text>
+<text x="27.94" y="15.5575" size="1.27" layer="21" align="center">-</text>
+<text x="25.7175" y="12.3825" size="1.27" layer="21" rot="R180" align="center">+</text>
+<text x="12.7" y="15.5575" size="1.27" layer="21" align="center">-</text>
+<text x="10.4775" y="12.3825" size="1.27" layer="21" align="center">+</text>
 </plain>
 <libraries>
 <library name="barbary_enterprises">
@@ -455,12 +461,12 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="26.6954" y="15.6591" size="0.8128" layer="28" ratio="10" rot="MR180" align="top-center"/>
 </element>
 <element name="IR2" library="Optics" package="LED5MM" value="TSAL6100" x="11.43" y="13.97" smashed="yes">
-<attribute name="NAME" x="14.1859" y="13.97" size="1.27" layer="25" ratio="10" rot="R90" align="top-center"/>
+<attribute name="NAME" x="14.1859" y="12.7" size="1.27" layer="25" ratio="10" rot="R90" align="top-center"/>
 <attribute name="VALUE" x="11.4046" y="15.4559" size="0.8128" layer="28" ratio="10" rot="MR180" align="top-center"/>
 </element>
-<element name="Q1" library="Optics" package="LED5MM" value="PT334-6B" x="19.05" y="13.97" smashed="yes">
-<attribute name="NAME" x="21.8059" y="13.97" size="1.27" layer="25" ratio="10" rot="R90" align="top-center"/>
-<attribute name="VALUE" x="19.0246" y="15.7734" size="0.8128" layer="28" ratio="10" rot="MR180" align="top-center"/>
+<element name="Q1" library="Optics" package="LED5MM" value="PT334-6B" x="19.05" y="13.97" smashed="yes" rot="R180">
+<attribute name="NAME" x="16.2941" y="15.5575" size="1.27" layer="25" ratio="10" rot="R270" align="top-center"/>
+<attribute name="VALUE" x="19.0754" y="16.2941" size="0.8128" layer="28" ratio="10" rot="MR0" align="top-center"/>
 </element>
 <element name="2N3904" library="barbary_enterprises" package="TO-92-AMMO" value="2N3904" x="19.05" y="7.62" smashed="yes">
 <attribute name="NAME" x="19.05" y="8.89" size="0.6096" layer="25" ratio="10" align="bottom-center"/>
@@ -478,7 +484,7 @@ Please make sure your boards conform to these design rules.</description>
 <signals>
 <signal name="GND">
 <contactref element="IR1" pad="K"/>
-<contactref element="Q1" pad="K"/>
+<contactref element="Q1" pad="A"/>
 <contactref element="JP1" pad="1"/>
 <wire x1="27.94" y1="13.97" x2="27.94" y2="13.335" width="0.8128" layer="16"/>
 <wire x1="27.94" y1="13.335" x2="26.67" y2="12.065" width="0.8128" layer="16"/>
@@ -496,7 +502,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="23.495" y1="15.875" x2="25.4" y2="13.97" width="0.8128" layer="16"/>
 </signal>
 <signal name="OUT">
-<contactref element="Q1" pad="A"/>
+<contactref element="Q1" pad="K"/>
 <contactref element="R1" pad="P$1"/>
 <contactref element="JP1" pad="3"/>
 <wire x1="24.13" y1="8.89" x2="22.86" y2="10.16" width="0.8128" layer="16"/>

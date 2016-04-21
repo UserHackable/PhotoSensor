@@ -10,6 +10,7 @@ A Photo sensor board for use in line following etc..
 * (1.4999, 0.6996) inches
 * (38.0972, 17.7701) mm
 
+[gerbers](%*_gerber.zip)
 
 
 | Front | Back |
