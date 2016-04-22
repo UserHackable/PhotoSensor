@@ -1925,7 +1925,7 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <part name="IR1" library="Optics" deviceset="LED" device="5MM" value="TSAL6100"/>
 <part name="IR2" library="Optics" deviceset="LED" device="5MM" value="TSAL6100"/>
 <part name="2N3904" library="barbary_enterprises" deviceset="TRANSISTOR_NPN" device="TO-92-AMMO" value="2N3904"/>
-<part name="R1" library="barbary_enterprises" deviceset="RESISTOR" device="AXIAL-0.3" value="?"/>
+<part name="R1" library="barbary_enterprises" deviceset="RESISTOR" device="AXIAL-0.3" value="10k"/>
 <part name="R2" library="barbary_enterprises" deviceset="RESISTOR" device="AXIAL-0.3" value="33"/>
 <part name="SUPPLY1" library="barbary_enterprises" deviceset="5V" device=""/>
 <part name="GND1" library="barbary_enterprises" deviceset="GND" device=""/>
